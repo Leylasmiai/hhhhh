@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Barre d'annonce</title>
+    <style>
+      .announcement-bar {
+        background-color: #f5f5f5;
+        color: #333;
+        padding: 10px;
+        text-align: center;
+        font-family: Arial, sans-serif;
+        position: relative;
+      }
+      .announcement-bar span {
+        font-weight: bold;
+      }
+      .announcement-bar .close-btn {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        background: none;
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="announcement-bar">
+      50% off Creative Tim Club! 🎉 Lifetime access to all current & future
+      products. Limited time offer! ✨
+      <button
+        class="close-btn"
+        onclick="this.parentElement.style.display='none';"
+      >
+        &times;
+      </button>
+    </div>
+    <!-- Rest of your webpage content -->
+  </body>
+</html>

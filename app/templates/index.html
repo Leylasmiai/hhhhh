@@ -1,0 +1,1476 @@
+<!--
+=========================================================
+* Soft UI Dashboard - v1.0.7
+=========================================================
+
+* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard
+* Copyright 2023 Creative Tim (https://www.creative-tim.com)
+* Licensed under MIT (https://www.creative-tim.com/license)
+* Coded by Creative Tim
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="apple-touch-icon" sizes="76x76" href="../static/img/b.png" />
+    <link rel="icon" type="image/png" href="../static/img/b.png" />
+    <title>BPELT</title>
+    <!--     Fonts and icons     -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700"
+      rel="stylesheet"
+    />
+    <!-- Nucleo Icons -->
+    <link href="../static/css/nucleo-icons.css" rel="stylesheet" />
+    <link href="../static/css/nucleo-svg.css" rel="stylesheet" />
+    <!-- Font Awesome Icons -->
+    <script
+      src="https://kit.fontawesome.com/42d5adcbca.js"
+      crossorigin="anonymous"
+    ></script>
+    <link href="../static/css/nucleo-svg.css" rel="stylesheet" />
+    <!-- CSS Files -->
+    <link
+      id="pagestyle"
+      href="../static/css/soft-ui-dashboard.css?v=1.0.7"
+      rel="stylesheet"
+    />
+    <!-- Nepcha Analytics (nepcha.com) -->
+    <!-- Nepcha is a easy-to-use web analytics. No cookies and fully compliant with GDPR, CCPA and PECR. -->
+    <script
+      defer
+      data-site="YOUR_DOMAIN_HERE"
+      src="https://api.nepcha.com/js/nepcha-analytics.js"
+    ></script>
+    <style>
+      .announcement-bar {
+        background-color: black;
+        color: white;
+        padding: 10px;
+        border-radius: 20px;
+        text-align: center;
+        font-family: Arial, sans-serif;
+        position: relative;
+     
+      }
+      .announcement-bar span {
+        font-weight: bold;
+      }
+      .announcement-bar .close-btn {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        background: none;
+        border: none;
+        color:white;
+        font-size: 16px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body class="g-sidenav-show bg-white-100">
+    
+    <aside
+      class="sidenav navbar navbar-vertical bg-gray-100 navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3"
+      id="sidenav-main"
+    >
+      <div class="sidenav-header">
+        <i
+          class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
+          aria-hidden="true"
+          id="iconSidenav"
+        ></i>
+        <a
+          class="navbar-brand m-0"
+          href=" file:///C:/Users/ssmia/Downloads/soft-ui-dashboard-main/soft-ui-dashboard-main/pages/dashboard.html "
+          target="_blank"
+        >
+          <img
+            src="../static/img/b.png"
+            class="navbar-brand-img h-100"
+            alt="main_logo"
+          />
+          <span class="ms-1 font-weight-bold">BPELT</span>
+        </a>
+      </div>
+      <hr class="horizontal dark mt-0" />
+      <div class="collapse navbar-collapse w-auto" id="sidenav-collapse-main">
+        <ul class="navbar-nav">
+          <li class="nav-item mt-3" id="nav-upload">
+            <h6
+              class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6"
+            >
+              Upload Dataset
+            </h6>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link active"
+              href="#"
+              onclick="showContent('data-upload-and-split')"
+            >
+              <div
+                class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center"
+              >
+                <!-- Icône d'upload -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-plus-fill" viewBox="0 0 16 16">
+                  <path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2M8.5 6v1.5H10a.5.5 0 0 1 0 1H8.5V10a.5.5 0 0 1-1 0V8.5H6a.5.5 0 0 1 0-1h1.5V6a.5.5 0 0 1 1 0"/>
+                </svg>
+              </div>
+              <span class="nav-link-text ms-1">Upload</span>
+            </a>
+          </li>
+          <li class="nav-item mt-3" id="nav-training">
+            <h6
+              class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6"
+            >
+              Perform Data Analysis
+            </h6>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link "
+              href="#"
+              onclick="showContent('training')"
+            >
+              <div
+                class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center"
+              >
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-grid" viewBox="0 0 16 16">
+                <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5z"/>
+              </svg>
+              </div>
+              <span class="nav-link-text ms-1">Apprentissage</span>
+            </a>
+          </li>
+          <li class="nav-item"id="nav-test" >
+            <a
+              class="nav-link "
+              href="#"
+              onclick="showContent('test-model')"
+            >
+              <div
+                class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center"
+              >
+                <svg
+                  width="12px"
+                  height="12px"
+                  viewBox="0 0 43 36"
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                >
+                  <title></title>
+                  <g
+                    stroke="none"
+                    stroke-width="1"
+                    fill="none"
+                    fill-rule="evenodd"
+                  >
+                    <g
+                      transform="translate(-2169.000000, -745.000000)"
+                      fill="#FFFFFF"
+                      fill-rule="nonzero"
+                    >
+                      <g transform="translate(1716.000000, 291.000000)">
+                        <g transform="translate(453.000000, 454.000000)">
+                          <path
+                            class="color-background opacity-6"
+                            d="M43,10.7482083 L43,3.58333333 C43,1.60354167 41.3964583,0 39.4166667,0 L3.58333333,0 C1.60354167,0 0,1.60354167 0,3.58333333 L0,10.7482083 L43,10.7482083 Z"
+                          ></path>
+                          <path
+                            class="color-background"
+                            d="M0,16.125 L0,32.25 C0,34.2297917 1.60354167,35.8333333 3.58333333,35.8333333 L39.4166667,35.8333333 C41.3964583,35.8333333 43,34.2297917 43,32.25 L43,16.125 L0,16.125 Z M19.7083333,26.875 L7.16666667,26.875 L7.16666667,23.2916667 L19.7083333,23.2916667 L19.7083333,26.875 Z M35.8333333,26.875 L28.6666667,26.875 L28.6666667,23.2916667 L35.8333333,23.2916667 L35.8333333,26.875 Z"
+                          ></path>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </svg>
+              </div>
+              <span class="nav-link-text ms-1">Test-model</span>
+            </a>
+          </li>
+          <li class="nav-item" id="nav-pred">
+            <a
+              class="nav-link "
+              href="#"
+              onclick="showContent('Prediction')"
+            >
+              <div
+                class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center"
+              >
+                <svg
+                  width="12px"
+                  height="12px"
+                  viewBox="0 0 42 42"
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                >
+                  <title></title>
+                  <g
+                    stroke="none"
+                    stroke-width="1"
+                    fill="none"
+                    fill-rule="evenodd"
+                  >
+                    <g
+                      transform="translate(-2319.000000, -291.000000)"
+                      fill="#FFFFFF"
+                      fill-rule="nonzero"
+                    >
+                      <g transform="translate(1716.000000, 291.000000)">
+                        <g transform="translate(603.000000, 0.000000)">
+                          <path
+                            class="color-background"
+                            d="M22.7597136,19.3090182 L38.8987031,11.2395234 C39.3926816,10.9925342 39.592906,10.3918611 39.3459167,9.89788265 C39.249157,9.70436312 39.0922432,9.5474453 38.8987261,9.45068056 L20.2741875,0.1378125 L20.2741875,0.1378125 C19.905375,-0.04725 19.469625,-0.04725 19.0995,0.1378125 L3.1011696,8.13815822 C2.60720568,8.38517662 2.40701679,8.98586148 2.6540352,9.4798254 C2.75080129,9.67332903 2.90771305,9.83023153 3.10122239,9.9269862 L21.8652864,19.3090182 C22.1468139,19.4497819 22.4781861,19.4497819 22.7597136,19.3090182 Z"
+                          ></path>
+                          <path
+                            class="color-background opacity-6"
+                            d="M23.625,22.429159 L23.625,39.8805372 C23.625,40.4328219 24.0727153,40.8805372 24.625,40.8805372 C24.7802551,40.8805372 24.9333778,40.8443874 25.0722402,40.7749511 L41.2741875,32.673375 L41.2741875,32.673375 C41.719125,32.4515625 42,31.9974375 42,31.5 L42,14.241659 C42,13.6893742 41.5522847,13.241659 41,13.241659 C40.8447549,13.241659 40.6916418,13.2778041 40.5527864,13.3472318 L24.1777864,21.5347318 C23.8390024,21.7041238 23.625,22.0503869 23.625,22.429159 Z"
+                          ></path>
+                          <path
+                            class="color-background opacity-6"
+                            d="M20.4472136,21.5347318 L1.4472136,12.0347318 C0.953235098,11.7877425 0.352562058,11.9879669 0.105572809,12.4819454 C0.0361450918,12.6208008 6.47121774e-16,12.7739139 0,12.929159 L0,30.1875 L0,30.1875 C0,30.6849375 0.280875,31.1390625 0.7258125,31.3621875 L19.5528096,40.7750766 C20.0467945,41.0220531 20.6474623,40.8218132 20.8944388,40.3278283 C20.963859,40.1889789 21,40.0358742 21,39.8806379 L21,22.429159 C21,22.0503869 20.7859976,21.7041238 20.4472136,21.5347318 Z"
+                          ></path>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </svg>
+              </div>
+              <span class="nav-link-text ms-1">Prediction</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="sidenav-footer mx-3 ">
+        <div class="card card-background shadow-none card-background-mask-secondary" id="sidenavCard">
+          <div class="full-background" style="background-image: url('../static/images/white-curved.jpg')"></div>
+          <div class="card-body text-start p-3 w-100">
+            <div class="icon icon-shape icon-sm bg-white shadow text-center mb-3 d-flex align-items-center justify-content-center border-radius-md">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-pdf-fill" viewBox="0 0 16 16">
+                <path d="M5.523 12.424q.21-.124.459-.238a8 8 0 0 1-.45.606c-.28.337-.498.516-.635.572l-.035.012a.3.3 0 0 1-.026-.044c-.056-.11-.054-.216.04-.36.106-.165.319-.354.647-.548m2.455-1.647q-.178.037-.356.078a21 21 0 0 0 .5-1.05 12 12 0 0 0 .51.858q-.326.048-.654.114m2.525.939a4 4 0 0 1-.435-.41q.344.007.612.054c.317.057.466.147.518.209a.1.1 0 0 1 .026.064.44.44 0 0 1-.06.2.3.3 0 0 1-.094.124.1.1 0 0 1-.069.015c-.09-.003-.258-.066-.498-.256M8.278 6.97c-.04.244-.108.524-.2.829a5 5 0 0 1-.089-.346c-.076-.353-.087-.63-.046-.822.038-.177.11-.248.196-.283a.5.5 0 0 1 .145-.04c.013.03.028.092.032.198q.008.183-.038.465z"/>
+                <path fill-rule="evenodd" d="M4 0h5.293A1 1 0 0 1 10 .293L13.707 4a1 1 0 0 1 .293.707V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2m5.5 1.5v2a1 1 0 0 0 1 1h2zM4.165 13.668c.09.18.23.343.438.419.207.075.412.04.58-.03.318-.13.635-.436.926-.786.333-.401.683-.927 1.021-1.51a11.7 11.7 0 0 1 1.997-.406c.3.383.61.713.91.95.28.22.603.403.934.417a.86.86 0 0 0 .51-.138c.155-.101.27-.247.354-.416.09-.181.145-.37.138-.563a.84.84 0 0 0-.2-.518c-.226-.27-.596-.4-.96-.465a5.8 5.8 0 0 0-1.335-.05 11 11 0 0 1-.98-1.686c.25-.66.437-1.284.52-1.794.036-.218.055-.426.048-.614a1.24 1.24 0 0 0-.127-.538.7.7 0 0 0-.477-.365c-.202-.043-.41 0-.601.077-.377.15-.576.47-.651.823-.073.34-.04.736.046 1.136.088.406.238.848.43 1.295a20 20 0 0 1-1.062 2.227 7.7 7.7 0 0 0-1.482.645c-.37.22-.699.48-.897.787-.21.326-.275.714-.08 1.103"/>
+              </svg>            </div>
+            <div class="docs-info">
+              <h6 class="text-white up mb-0">Here's my approach</h6>
+              <p class="text-xs font-weight-bold">Please check our docs</p>
+              <a href="https://drive.google.com/file/d/1lQZnPWrh2E2J7jLASopLyPttzqqFkXA6/view?usp=drive_link" target="_blank" class="btn btn-white btn-sm w-100 mb-0">Documentation</a>
+            </div></div> </div>
+            <a class="btn bg-gradient-primary mt-3 w-100" href="/buy"target="_blank">Upgrade Pro</a>
+
+          
+       
+        </div>
+    </aside>
+    
+    <!-- JavaScript to handle the active state of the navigation links -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        // Remove "active" class from all links
+        navLinks.forEach(link => link.classList.remove('active'));
+        
+        // Add "active" class to the clicked link
+        this.classList.add('active');
+      });
+    });
+  });
+</script>
+    <main
+      class="main-content position-relative max-height-vh-100 h-100 border-radius-lg"
+    >
+    <div class="announcement-bar">
+      50% off Creative Tim Club! 🎉 Lifetime access to all current & future
+      products. Limited time offer! ✨
+      <a class="btn bg-gradient-primary btn-sm mb-0 me-3" target="_blank" href="/buy"> upgrade pro</a>
+
+      <button
+        class="close-btn"
+        onclick="this.parentElement.style.display='none';"
+      >
+        &times;
+      </button>
+    </div>
+
+
+<!-- Navbar -->
+<nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" navbar-scroll="true">
+  <div class="container-fluid py-1 px-3">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
+        <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a></li>
+        <li class="breadcrumb-item text-sm text-dark active" aria-current="page">BPELT</li>
+      </ol>
+      <h6 class="font-weight-bolder mb-0">BPELT</h6>
+    </nav>
+    <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+      <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+        <li class="nav-item d-flex align-items-center">
+          <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank" href="/ok"> Need Helps ?</a>
+        </li>
+        <li class="nav-item d-flex align-items-center">
+          <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank" href="https://github.com/ApoorvaKrisna/NASA-promise-dataset-repository"> Dataset used ?</a>
+        </li>
+        
+      </div>
+      <ul class="navbar-nav  justify-content-end">
+       
+      
+        <li class="nav-item px-3 d-flex align-items-center">
+          <form action="{{ url_for('reset') }}" method="POST">
+            <button type="submit" class="btn bg-gradient-primary btn-sm mb-0 me-3" style="font-size: 12px;">
+                <i class="fas fa-redo"></i>
+            </button>
+        </form>
+        
+        </li>
+      
+          
+      </ul>
+      
+    </div>
+  </div>
+</nav>
+<!-- End Navbar -->
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+      <div class="container-fluid py-4 text-center">
+        <!--upload **************************-->
+        <section id="data-upload-and-split" class="content-section">
+          <section class="page-section" id="data-upload-and-split">
+            <div class="container">
+                <!-- Titre et sous-titre -->
+                <div class="text-center">
+                    <h2 class="section-heading">Upload and Split Data</h2>
+                    <h3 class="section-subheading text-muted">Upload your dataset and split it into training and testing data.</h3>
+                </div>
+          
+                <!-- Première rangée pour le téléchargement et la division des données -->
+                <div class="row mb-4">
+                    <div class="col-md-12">
+                        <div class="upload-split-container w-full p-6 bg-white rounded-lg shadow-lg">
+                          <hr class="horizontal dark mt-0" />
+
+                            <div class="upload-icon text-center text-gray-500 mb-4">
+                                <i class="fas fa-upload fa-3x"></i>
+                            </div>
+          
+                            <form id="upload-split-form" method="post" enctype="multipart/form-data" class="text-center">
+                              <div class="file-upload-input mb-4">
+                                  <label for="file-input" class="file-input-label text-gray-700">Select a file or drag and drop here</label>
+                                  <br><br><br>
+                                  <input type="file" id="file-input" name="file" class="file-input">
+                              </div>
+                              <hr class="horizontal dark mt-0" />
+                             
+                              <div class="row mb-4">
+                                  <div class="col-md-6">
+                                    <br>
+                                      <div class="form-group mb-4">
+                                          <label for="training-size">Training Data Percentage (%):</label><br>
+                                          <input type="number" id="training-size" name="training_size" class="" min="0" max="100" placeholder="Indicate the size of the training part  " required>
+                                      </div>
+                                  </div>
+                                  <div class="col-md-6">
+                                    <br>
+                                      <div class="form-group mb-4">
+                                          <label for="testing-size">Testing Data Percentage (%):</label><br>
+                                          <input type="number" id="testing-size" name="testing_size" class="" min="0" max="100" placeholder="Indicate the size of the test part " required>
+                                      </div>
+                                  </div>
+                              </div>
+        
+                              <hr class="horizontal dark mt-0" />
+
+                              <div class="form-text">Accepted file types: ARFF</div>
+          
+                              <div class="form-buttons mb-1">
+                                  <!-- Assurez-vous d'ajouter target="_blank" au bouton Show Summary -->
+                               <button type="submit" name="upload" class="btn cursor-pointer btn-primary " formtarget="_blank">Show Summary</button>
+                             
+        
+                                  <button type="submit" name="split" class="btn cursor-pointer btn-success bg-green-500 text-white text-center hover:bg-gray-600 transition duration-300"href="#spliting">Split Data</button>
+                                  
+                                  </div>
+                          </form>
+                          
+                         
+                        
+                          
+          
+                           <!-- Afficher les messages -->
+             <!-- Section pour les messages flash -->
+             {% with messages = get_flashed_messages() %}
+             {% if messages %}
+                 <div class="alert alert-danger" role="alert">
+                     <ul>
+                         {% for message in messages %}
+                             <li>{{ message }}</li>
+                         {% endfor %}
+                     </ul>
+                 </div>
+             {% endif %}
+          {% endwith %}
+          
+                        </div>
+                    </div>
+                </div>
+          
+               <!-- Deuxième rangée pour les résultats de la division des données -->
+          <div class="row" id="spliting">
+            <!-- Colonne pour les données d'entraînement -->
+            <div class="col-md-12">
+              <br><br>
+                <div class="data-results-container w-full p-6 bg-white rounded-lg shadow-lg text-center" style="height: 500px; overflow: auto">
+                    <h4 class="section-subheading text-muted">Training Data(%)</h4>
+                    <p>𝐍𝐮𝐦𝐛𝐞𝐫 𝐨𝐟 𝐫𝐨𝐰𝐬: {{ train_rows }}</p>
+                    <div class="data-table ">
+                        {{ train_html|safe }}
+                    </div>
+                </div>
+            </div>
+          <br>
+            <!-- Colonne pour les données de test -->
+            <div class="col-md-12">
+              <br><br>
+                <div class="data-results-container w-full p-6 bg-white rounded-lg shadow-lg text-center" style="height: 500px; overflow: auto">
+                  
+                    <h4 class="section-subheading text-muted">Testing Data(%)</h4>
+                    <p>𝐍𝐮𝐦𝐛𝐞𝐫 𝐨𝐟 𝐫𝐨𝐰𝐬: {{ test_rows }}</p>
+                    <div class="data-table ">
+                        {{ test_html|safe }}
+                    </div>
+                </div>
+            </div>
+          </div>
+          <br><br>
+          <button class="nav-btn" onclick="showNextSection('data-upload-and-split', 'training')">
+            <i class="fas fa-arrow-right"></i> Next
+          </button>
+          </section>
+      </section>
+      
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </section>
+
+        <!--training**************-->
+        <section id="training" class="content-section" style="display: none">
+          <!-- Contenu pour l'analyse des données -->
+         
+          <!-- Section training -->
+    <section class="page-training white-bg" id="training">
+      <div class="container">
+        <div class="text-center">
+          <h2 class="section-heading text-uppercase">
+            Select Your Classifiers
+          </h2>
+          </h4 class="section-subheading text-muted">
+            Choose the classifiers that will be used during the training phase,
+            and specify weights or let the system calculate them automatically
+            based on accuracy.
+          </h4>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12 mb-4">
+            <!-- Formulaire de sélection de classificateurs -->
+            <main class="container flex justify-center items-center">
+              <div class="p-8 bg-white rounded-lg shadow">
+                <form
+                  id="train-models-form"
+                  method="POST"
+                  action="/train"
+                  class="centered-form"
+                >
+                  <div class="row">
+                    <div class="col-md-5">
+                      <h2 class="text-center mb-3">Select Classifiers</h2>
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          id="select-all"
+                          name="select_all"
+                          class="form-check-input"
+                          onchange="toggleClassifiers(this)"
+                        />
+                        <label for="select-all" class="form-check-label"
+                          >Select All</label
+                        ><br />
+
+                        <!-- Checkbox pour chaque classificateur -->
+                        <input
+                          type="checkbox"
+                          id="decision_tree"
+                          name="classifier"
+                          value="decision_tree"
+                          class="form-check-input"
+                        />
+                        <label for="decision_tree" class="form-check-label"
+                          >Decision Tree</label
+                        ><br />
+
+                        <input
+                          type="checkbox"
+                          id="naive_bayes"
+                          name="classifier"
+                          value="naive_bayes"
+                          class="form-check-input"
+                        />
+                        <label for="naive_bayes" class="form-check-label"
+                          >Naive Bayes</label
+                        ><br />
+
+                        <input
+                          type="checkbox"
+                          id="random_forest"
+                          name="classifier"
+                          value="random_forest"
+                          class="form-check-input"
+                        />
+                        <label for="random_forest" class="form-check-label"
+                          >Random Forest</label
+                        ><br />
+
+                        <input
+                          type="checkbox"
+                          id="svm"
+                          name="classifier"
+                          value="svm"
+                          class="form-check-input"
+                        />
+                        <label for="svm" class="form-check-label"
+                          >Support Vector Machine (SVM)</label
+                        ><br />
+                      </div>
+                    </div>
+                    <div class="col-md-1 vertical-line"></div>
+
+                    <div class="col-md-4">
+                      <h2 class="text-center mb-3">
+                        Specify Weights (Optional)
+                      </h2>
+                      <div class="form-check">
+                        <input
+                          type="radio"
+                          id="automatic_weights"
+                          name="weight_option"
+                          value="automatic"
+                          class="form-check-input"
+                          checked
+                        />
+                        <label for="automatic_weights" class="form-check-label"
+                          >Calculate weights automatically</label
+                        ><br />
+
+                        <input
+                          type="radio"
+                          id="manual_weights"
+                          name="weight_option"
+                          value="manual"
+                          class="form-check-input"
+                        />
+                        <label for="manual_weights" class="form-check-label"
+                          >Specify weights manually</label
+                        ><br />
+                      </div>
+
+                      <div id="weight_inputs" style="display: none">
+                        <!-- Champs de poids -->
+                        <div class="form-group">
+                          <label for="weight_decision_tree"
+                            >Decision Tree Weight:</label
+                          >
+                          <input
+                            type="number"
+                            id="weight_decision_tree"
+                            name="weight_decision_tree"
+                            step="0.01"
+                            min="0"
+                            max="1"
+                            class="form-control"
+                          />
+                        </div>
+
+                        <div class="form-group">
+                          <label for="weight_naive_bayes"
+                            >Naive Bayes Weight:</label
+                          >
+                          <input
+                            type="number"
+                            id="weight_naive_bayes"
+                            name="weight_naive_bayes"
+                            step="0.01"
+                            min="0"
+                            max="1"
+                            class="form-control"
+                          />
+                        </div>
+
+                        <div class="form-group">
+                          <label for="weight_random_forest"
+                            >Random Forest Weight:</label
+                          >
+                          <input
+                            type="number"
+                            id="weight_random_forest"
+                            name="weight_random_forest"
+                            step="0.01"
+                            min="0"
+                            max="1"
+                            class="form-control"
+                          />
+                        </div>
+
+                        <div class="form-group">
+                          <label for="weight_svm">SVM Weight:</label>
+                          <input
+                            type="number"
+                            id="weight_svm"
+                            name="weight_svm"
+                            step="0.01"
+                            min="0"
+                            max="1"
+                            class="form-control"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <br>
+                <hr class="horizontal dark mt-0" />
+                  <!-- Bouton de soumission -->
+                  <div class="text-center">
+                    <button type="submit" class="btn btn-success w-50">
+                      Train Models
+                    </button>
+                  </div>
+
+                  <!-- Messages flash -->
+                  {% with messages = get_flashed_messages() %} {% if messages %}
+                  <div class="alert alert-danger" role="alert">
+                    <ul>
+                      {% for message in messages %}
+                      <li>{{ message }}</li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                  {% endif %} {% endwith %}
+                </form>
+              </div>
+            </main>
+          </div>
+
+          <!-- Résultats de la formation -->
+          <div class=" col-md-12">
+            <main class="container flex justify-center items-center">
+              <div class="p-4 bg-white rounded-lg shadow">
+                <div
+                  class="container mx-auto mt-4 text-center"
+                  id="resultContainer"
+                >
+                  <h2 class="text-xl font-semibold mb-4">Result</h2>
+                  <table id="results-table" class="table table-bordered">
+                    <thead>
+                      <tr class="bg-light">
+                        <th class="border border-gray-300 px-4 py-2">Model</th>
+                        <th class="border border-gray-300 px-4 py-2">
+                          Accuracy
+                        </th>
+                        <th class="border border-gray-300 px-4 py-2">Weight</th>
+                        <th class="border border-gray-300 px-4 py-2">
+                          F1-Score
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- JavaScript ajoutera des lignes ici -->
+                    </tbody>
+                  </table>
+                </div>
+               
+              </div>
+            </main>
+          </div>
+        </div>
+      </div>
+      
+  <script>
+    function toggleClassifiers(selectAllCheckbox) {
+      const checkboxes = document.querySelectorAll('input[name="classifier"]');
+      checkboxes.forEach((checkbox) => {
+        checkbox.checked = selectAllCheckbox.checked;
+      });
+    }
+
+    function toggleWeightInputs() {
+      const manualWeights = document.getElementById('manual_weights').checked;
+      const weightInputs = document.getElementById('weight_inputs');
+      if (manualWeights) {
+        weightInputs.style.display = 'block';
+      } else {
+        weightInputs.style.display = 'none';
+      }
+    }
+
+    document.getElementById('train-models-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const formData = new FormData(this);
+      
+      // You can add an AJAX request here to send formData to the server.
+      // For example:
+      // fetch('/train', {
+      //   method: 'POST',
+      //   body: formData
+      // })
+      // .then(response => response.json())
+      // .then(data => {
+      //   console.log(data);
+      // })
+      // .catch(error => {
+      //   console.error(error);
+      // });
+
+      console.log('Form submitted');
+    });
+  </script>
+  <br><br>
+  <button class="nav-btn" onclick="showNextSection('training', 'data-upload-and-split')">
+    <i class="fas fa-arrow-left"></i> Previous
+  </button>
+  <button class="nav-btn" onclick="showNextSection('training', 'test-model')">
+    <i class="fas fa-arrow-right"></i> Next
+  </button>
+    </section>
+
+
+
+
+
+
+  </section>
+
+        <!--training**************-->
+        <section id="test-model" class="content-section" style="display: none">
+         
+
+          <section class="page-section" id="test_model">
+            <div class="container">
+              <!-- Section Heading and Subtitle -->
+              <div class="text-center mb-5">
+                <h2 class="section-heading text-uppercase">Test Model</h2>
+              </h4 class="section-subheading text-muted">
+                  Obtain the model that exhibits the greatest level of accuracy and
+                  proceed to conduct testing on it.
+                </h4>
+              </div>
+      
+              <!-- Get Highest Accuracy Model Section -->
+              <div class="row justify-content-center mb-5">
+                <div class="col-md-12 bg-white rounded-lg shadow p-4">
+                  <div class="text-center">
+                    <h3 class="text-lg font-weight-bold mb-3">
+                      Get Highest Accuracy Model
+                    </h3>
+                    <button
+                      class="btn btn-info same-width"
+                      onclick="getHighestAccuracyModel()"
+                    >
+                      Get Model
+                    </button>
+                  </div>
+                  <table id="resultTable" class="table table-bordered mt-3">
+                    <thead>
+                      <tr>
+                        <th>Property</th>
+                        <th>Value</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- Model data will be dynamically inserted here -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+      
+              <!-- Test Model Section -->
+              <div class="row justify-content-center mb-5">
+                <div class="col-md-12 bg-white rounded-lg shadow p-4">
+                    <div class="text-center">
+                        <h3 class="text-lg font-weight-bold mb-3">Test Model</h3>
+                        <button
+                            id="testButton"
+                            class="btn btn-info same-width"
+                            onclick="testModel()"
+                        >
+                            Test the Model
+                        </button>
+                    </div>
+                    <!-- Results Container -->
+                    <div id="resultsContainer" style="height: 300px; overflow-y: auto;"> <!-- Set the height and enable vertical scrolling -->
+                        <table id="resultsTable" class="table table-bordered mt-3">
+                            <thead>
+                                <tr>
+                                    <th>Index</th>
+                                    <th>Real Label</th>
+                                    <th>Predicted Label</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Test results will be dynamically inserted here -->
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <!-- Instance Characteristics Section -->
+            <div class="row justify-content-center mb-5">
+              <div class="col-md-12 bg-white rounded-lg shadow p-4"
+              >
+                <div class="text-center">
+                  <h3 class="text-lg font-weight-bold mb-3">
+                    Instance Characteristics
+                  </h3>
+                  <input
+                    type="number"
+                    id="instanceIndex"
+                    placeholder="Enter instance index"
+                    class="form-control mb-3"
+                  />
+                  <button
+                    id="displayInstanceButton"
+                    class="btn btn-info same-width"
+                    onclick="displayInstance()"
+                  >
+                    Display Instance Characteristics
+                  </button>
+                </div>
+                <div id="instanceDetailsContainer"style="height: 300px; overflow: auto">
+                  <table id="instanceDetailsTable" class="table table-bordered mt-3" style="height: 300px; overflow-y: auto;">
+                    <thead>
+                      <tr>
+                        <th>Characteristic</th>
+                        <th>Value</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- Instance details will be dynamically inserted here -->
+                    </tbody>
+                  </table>
+                </div>
+               
+              </div>
+             
+            </div>
+            <button class="nav-btn" onclick="showNextSection('test-model', 'training')">
+              <i class="fas fa-arrow-left"></i> Previous
+            </button>
+            <button class="nav-btn" onclick="showNextSection('test-model', 'Prediction')">
+              <i class="fas fa-arrow-right"></i> Next
+            </button>
+          </section>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+        </section>
+
+        <!--training**************-->
+        <section id="Prediction" class="content-section" style="display: none">
+          
+          <section class="page-section" id="Prediction">
+            <div class="container">
+              <div class="text-center mb-5">
+                <h2 class="section-heading text-uppercase">
+                  Prediction and Visualization
+                </h2>
+              </div>
+              <div class="row justify-content-center mb-5">
+                <div class="col-md-12 bg-white rounded-lg shadow p-4">
+                  <!-- Button to initiate prediction and visualization -->
+                  <button
+                    id="predictAndVisualizeBtn"
+                    class="btn btn-info btn-custom-width mb-4"
+                  >
+                    Predict and Visualize
+                  </button>
+      
+                  <!-- Container to display results -->
+                  <div id="results">
+                    <div class="row">
+                      <!-- Confusion matrix section -->
+                      <div class="col-md-6 mb-4">
+                        <div class="card">
+                          <div class="card-header">Confusion Matrix</div>
+                          <div class="card-body">
+                            <div id="confusionMatrix"></div>
+                          </div>
+                        </div>
+                      </div>
+      
+                      <!-- ROC curve and AUC section -->
+                      <div class="col-md-6 mb-4">
+                        <div class="card">
+                          <div class="card-header">ROC Curve and AUC</div>
+                          <div class="card-body">
+                            <div id="rocCurve"></div>
+                            <div id="aucScore"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+      
+                    <div class="row">
+                      <!-- Classification report section -->
+                      <div class="col-md-12 mb-4">
+                        <div class="card">
+                          <div class="card-header">Classification Report</div>
+                          <div class="card-body">
+                            <!-- Classification report table -->
+                            <table
+                              id="classificationReportTable"
+                              class="table table-bordered"
+                            >
+                              <thead>
+                                <tr>
+                                  <th>Metric</th>
+                                  <th>Class 0</th>
+                                  <th>Class 1</th>
+                                  <!-- Add more class columns if necessary -->
+                                  <th>Average</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <!-- Rows will be dynamically populated -->
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+      
+                    <!-- Other sections such as accuracy can be added here -->
+                  </div>
+                  <br>
+                  <!-- Bouton aligné à gauche avec Bootstrap -->
+                 
+      
+      
+        </div>
+      </form>
+      
+                </div>
+                
+              </div>
+              <button class="nav-btn" onclick="showNextSection('Prediction', 'test-model')">
+                <i class="fas fa-arrow-left"></i> Previous
+              </button>
+            </div>
+            <!-- Fonction JavaScript pour faire défiler la page vers le haut -->
+      <script>
+          /* Afficher le bouton lorsque la page est défilée vers le bas */
+          window.onscroll = function() {
+            if (document.documentElement.scrollTop > 100) {
+                document.querySelector('.btn-back-to-top').style.display = 'block';
+            } else {
+                document.querySelector('.btn-back-to-top').style.display = 'none';
+            }
+        };
+        function scrollToTop() {
+            // Faire défiler la page jusqu'en haut en douceur
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+      </script>
+      
+            <!-- Script for handling button click and fetching results -->
+            <script>
+              document
+                .getElementById("predictAndVisualizeBtn")
+                .addEventListener("click", function () {
+                  // Perform a POST request to the Flask route /predict_and_visualize
+                  fetch("/predict_and_visualize", {
+                    method: "POST",
+                    headers: {
+                      "Content-Type": "application/json",
+                    },
+                  })
+                    .then((response) => {
+                      if (!response.ok) {
+                        throw new Error("Failed to fetch data");
+                      }
+                      return response.json();
+                    })
+                    .then((data) => {
+                      // Clear existing content in the results container
+                      document.getElementById("confusionMatrix").innerHTML = "";
+                      document.getElementById("rocCurve").innerHTML = "";
+                      document.getElementById("aucScore").innerHTML = "";
+                      document
+                        .getElementById("classificationReportTable")
+                        .querySelector("tbody").innerHTML = "";
+      
+                      // Display the confusion matrix image if available
+                      if (data.confusion_matrix) {
+                        const img = document.createElement("img");
+                        img.src = data.confusion_matrix;
+                        img.alt = "Confusion Matrix";
+                        img.className = "img-fluid";
+                        document.getElementById("confusionMatrix").appendChild(img);
+                      }
+      
+                      // Display ROC curve image and AUC score if available
+                      if (data.roc_curve) {
+                        const img = document.createElement("img");
+                        img.src = data.roc_curve;
+                        img.alt = "ROC Curve";
+                        img.className = "img-fluid";
+                        document.getElementById("rocCurve").appendChild(img);
+                      }
+      
+                      if (data.auc_score !== undefined) {
+                        const aucDiv = document.createElement("div");
+                        aucDiv.innerHTML = `<strong>AUC Score:</strong> ${data.auc_score}`;
+                        document.getElementById("aucScore").appendChild(aucDiv);
+                      }
+      
+                      // Display classification report in a table
+                      if (data.classification_report) {
+                        const tableBody = document
+                          .getElementById("classificationReportTable")
+                          .querySelector("tbody");
+      
+                        // Populate rows based on the classification report data
+                        for (const [label, metrics] of Object.entries(
+                          data.classification_report
+                        )) {
+                          const row = document.createElement("tr");
+                          if (label !== "accuracy") {
+                            row.innerHTML = `
+                                  <td>${label}</td>
+                                  <td>${metrics["precision"].toFixed(2)}</td>
+                                  <td>${metrics["recall"].toFixed(2)}</td>
+                                  <td>${metrics["f1-score"].toFixed(2)}</td>
+                                  <td>${metrics["support"]}</td>
+                              `;
+                          } else {
+                            // Handle overall accuracy separately
+                            row.innerHTML = `
+                                  <td>${label}</td>
+                                  <td colspan="4">${metrics.toFixed(2)}</td>
+                              `;
+                          }
+                          tableBody.appendChild(row);
+                        }
+                      }
+      
+                      // You can handle other data sections here
+                    })
+                    .catch((error) => {
+                      console.error("Error fetching data:", error);
+                      const resultsDiv = document.getElementById("results");
+                      resultsDiv.innerHTML =
+                        "<p>Error fetching data. Please try again later.</p>";
+                    });
+                });
+            </script>
+      
+            
+            
+          </section>
+
+
+
+        </section>
+
+        <footer class="footer pt-3">
+          <div class="container-fluid">
+            <div class="row align-items-center justify-content-lg-between">
+              <div class="col-lg-6 mb-lg-0 mb-4">
+                <div
+                  class="copyright text-center text-sm text-muted text-lg-start"
+                >
+                  ©
+                  <script>
+                    document.write(new Date().getFullYear());
+                  </script>
+                  , made with <i class="fa fa-heart"></i> by
+                  <a
+                    href="https://github.com/Leylasmiai"
+                    class="font-weight-bold"
+                    target="_blank"
+                    >Smiai Leila</a
+                  >
+                  .
+                </div>
+              </div>
+              <div class="col-lg-6"></div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </main>
+    <script>
+      function toggleClassifiers(selectAllCheckbox) {
+        const checkboxes = document.querySelectorAll(
+          'input[name="classifier"]'
+        );
+        checkboxes.forEach((checkbox) => {
+          checkbox.checked = selectAllCheckbox.checked;
+        });
+      }
+    </script>
+
+    <script>
+      function displayInstance() {
+        const index = document.getElementById("instanceIndex").value;
+
+        // Vérifier que l'index est bien un entier
+        if (index !== "" && !isNaN(index)) {
+          fetch(`/get_instance_details`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ index: parseInt(index) }),
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              const tableBody = document.querySelector(
+                "#instanceDetailsTable tbody"
+              );
+              tableBody.innerHTML = ""; // Effacer les anciennes données
+
+              // Remplir le tableau avec les données de l'instance spécifiée
+              for (const [key, value] of Object.entries(data)) {
+                const row = document.createElement("tr");
+                const characteristicCell = document.createElement("td");
+                characteristicCell.textContent = key;
+                const valueCell = document.createElement("td");
+                valueCell.textContent = value;
+                row.appendChild(characteristicCell);
+                row.appendChild(valueCell);
+                tableBody.appendChild(row);
+              }
+            })
+            .catch((error) => {
+              console.error("Error fetching instance details:", error);
+            });
+        } else {
+          alert("Please enter a valid integer index.");
+        }
+      }
+    </script>
+
+    <!-- Incluez le script JavaScript -->
+    <script>
+      // Fonction pour appeler la route `/test_model` et afficher les résultats
+      function testModel() {
+        // Effectuer une requête AJAX à la route `/test_model`
+        fetch("/test_model", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            // Obtenez le tableau des résultats
+            const resultsTableBody = document
+              .getElementById("resultsTable")
+              .getElementsByTagName("tbody")[0];
+
+            // Videz le contenu existant du tableau
+            resultsTableBody.innerHTML = "";
+
+            // Parcourez les résultats
+            for (const result of data) {
+              // Créez une nouvelle ligne de tableau
+              const row = document.createElement("tr");
+
+              // Ajoutez les données de résultat à la ligne
+              const indexCell = document.createElement("td");
+              indexCell.textContent = "instance " + result.index;
+              row.appendChild(indexCell);
+
+              const realLabelCell = document.createElement("td");
+              realLabelCell.textContent = result.real_label;
+              row.appendChild(realLabelCell);
+
+              const predictedLabelCell = document.createElement("td");
+              predictedLabelCell.textContent = result.predicted_label;
+              row.appendChild(predictedLabelCell);
+
+              // Ajoutez la ligne au tableau
+              resultsTableBody.appendChild(row);
+            }
+          })
+          .catch((error) => {
+            console.error("Error fetching test results:", error);
+          });
+      }
+
+      // Attachez un gestionnaire d'événements au bouton pour appeler la fonction `testModel` lorsqu'il est cliqué
+      document
+        .getElementById("testButton")
+        .addEventListener("click", testModel);
+    </script>
+
+    <script>
+      // Function to request the highest accuracy model from the server
+      function getHighestAccuracyModel() {
+        fetch("/get_highest_accuracy_model", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            // Display the result
+            const resultTable = document.getElementById("resultTable");
+            if (data.status === "success") {
+              const model = data.model;
+              // Clear previous content from the table
+              resultTable.innerHTML = "";
+              // Add model data to the table
+              resultTable.innerHTML = `
+                    <tr>
+                        <td>Classifier:</td>
+                        <td>${model.classifier}</td>
+                    </tr>
+                    <tr>
+                        <td>Accuracy:</td>
+                        <td>${model.accuracy.toFixed(2)}</td>
+                    </tr>
+                    <tr>
+                        <td>F1 Score:</td>
+                        <td>${model.f1_score.toFixed(2)}</td>
+                    </tr>
+                `;
+            } else {
+              resultTable.innerHTML = `
+                    <tr>
+                        <td colspan="2">Error: ${data.message}</td>
+                    </tr>
+                `;
+            }
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+          });
+      }
+    </script>
+
+    <!--controle de saisie -->
+
+    <script>
+      document
+        .getElementById("train-models-form")
+        .addEventListener("submit", function (event) {
+          // Get all checkboxes
+          var checkboxes = document.querySelectorAll(
+            'input[name="classifier"]'
+          );
+
+          // Check if at least one checkbox is checked
+          var isChecked = Array.from(checkboxes).some(function (checkbox) {
+            return checkbox.checked;
+          });
+
+          // If no checkbox is checked, prevent form submission
+          if (!isChecked) {
+            alert("Please select at least one classifier.");
+            event.preventDefault();
+          }
+        });
+    </script>
+
+    <!--fin de controle de saisie -->
+
+    <script>
+      // JavaScript pour gérer l'affichage des champs de poids en fonction du choix de l'utilisateur
+      document
+        .querySelectorAll('input[name="weight_option"]')
+        .forEach(function (input) {
+          input.addEventListener("change", function () {
+            const weightInputs = document.getElementById("weight_inputs");
+            if (input.value === "manual") {
+              weightInputs.style.display = "block";
+            } else {
+              weightInputs.style.display = "none";
+            }
+          });
+        });
+    </script>
+
+    <script>
+      document
+        .getElementById("uploadForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          var formData = new FormData(this);
+          fetch("/upload", {
+            method: "POST",
+            body: formData,
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              if (data.error) {
+                document.getElementById("summary").innerHTML = data.error;
+              } else {
+                // Afficher le résumé
+                var summaryHTML = "<h3>Summary:</h3>";
+                summaryHTML += `<p>Number of rows: ${data.num_rows}</p>`;
+                summaryHTML += `<p>Number of columns: ${data.num_columns}</p>`;
+                summaryHTML += "<p>Column names:</p><ul>";
+                data.column_names.forEach((name) => {
+                  summaryHTML += `<li>${name}</li>`;
+                });
+                summaryHTML += "</ul>";
+                summaryHTML += "<h3>Summary Statistics:</h3>";
+                for (var col in data.summary_stats) {
+                  summaryHTML += `<p><strong>${col}</strong>: `;
+                  for (var stat in data.summary_stats[col]) {
+                    summaryHTML += `${stat}: ${data.summary_stats[col][
+                      stat
+                    ].toFixed(2)}, `;
+                  }
+                  summaryHTML += "</p>";
+                }
+                document.getElementById("summary").innerHTML = summaryHTML;
+              }
+            })
+            .catch((error) => {
+              console.error("Error:", error);
+              document.getElementById("summary").innerHTML =
+                "An error occurred";
+            });
+        });
+    </script>
+
+    <!--hadha eli net7akom bih fi les section w aside bar -->
+    <script>
+      function showContent(sectionId) {
+        // Cache toutes les sections
+        var sections = document.getElementsByClassName("content-section");
+        for (var i = 0; i < sections.length; i++) {
+          sections[i].style.display = "none";
+        }
+
+        // Affiche la section cliquée
+        document.getElementById(sectionId).style.display = "block";
+      }
+    </script>
+
+
+    <!--nexxxxxxxxxxxt -->
+    <script>
+      function showNextSection(currentSectionId, nextSectionId) {
+        // Cache la section actuelle
+        document.getElementById(currentSectionId).style.display = 'none';
+        
+        // Affiche la prochaine section
+        document.getElementById(nextSectionId).style.display = 'block';
+      }
+    
+      function showContent(sectionId) {
+        // Cache toutes les sections
+        var sections = document.getElementsByClassName('content-section');
+        for (var i = 0; i < sections.length; i++) {
+          sections[i].style.display = 'none';
+        }
+    
+        // Affiche la section cliquée
+        document.getElementById(sectionId).style.display = 'block';
+      }
+    </script>
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const navLinks = document.querySelectorAll('.nav-link');
+    
+        navLinks.forEach(link => {
+          link.addEventListener('click', function() {
+            // Remove "active" class from all links
+            navLinks.forEach(link => link.classList.remove('active'));
+            
+            // Add "active" class to the clicked link
+            this.classList.add('active');
+          });
+        });
+      });
+    </script>
+    
+     
+    
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script
+      type="text/javascript"
+      src="{{url_for('static', filename='scripts.js')}}"
+    ></script>
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <!-- * *                               SB Forms JS                               * *-->
+    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+  </body>
+</html>

@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Subscription Page</title>
+    <link
+    id="pagestyle"
+    href="../static/css/soft-ui-dashboard.css?v=1.0.7"
+    rel="stylesheet"
+  />
+    <style>
+      hh {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: white;
+      }
+      .container {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-width: 700px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+      }
+      .left,
+      .right {
+        flex: 1;
+        padding: 20px;
+      }
+      .right {
+        border-left: 1px solid #e0e0e0;
+      }
+      h1 {
+        font-size: 1.5em;
+        margin: 0 0 20px;
+      }
+      .price,
+      .subtotal,
+      .tax,
+      .total {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+      }
+      .price span,
+      .subtotal span,
+      .tax span,
+      .total span {
+        font-size: 12px;
+        color: gray;
+      }
+      .form-group {
+        margin-bottom: 10px;
+      }
+      .form-group label {
+        display: block;
+        
+      }
+      .form-group input,
+      .form-group select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+      }
+      .form-group input[type="checkbox"] {
+        width: auto;
+      }
+      .form-group .checkbox-label {
+        display: inline-block;
+        margin-left: 5px;
+        color: gray;
+        font-size: 10;
+      }
+      .subscribe-btn {
+        background-color: #82d616;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+      }
+      .subscribe-btn:hover {
+        background-color: #82d616;
+        color: black;
+      }
+    </style>
+    <style>
+      /* (Votre style CSS ici) */
+    </style>
+    <script>
+      function validateForm(event) {
+        event.preventDefault();
+
+        const email = document.getElementById("email").value;
+        const cardNumber = document.getElementById("card-number").value;
+        const expDate = document.getElementById("exp-date").value;
+        const cvc = document.getElementById("cvc").value;
+        const cardholderName = document.getElementById("cardholder-name").value;
+        const addressLine1 = document.getElementById("address-line-1").value;
+        const postalCode = document.getElementById("postal-code").value;
+        const city = document.getElementById("city").value;
+        const terms = document.getElementById("terms").checked;
+
+        if (!email) {
+          alert("Email is required");
+          return false;
+        }
+
+        if (!validateEmail(email)) {
+          alert("Invalid email format");
+          return false;
+        }
+
+        if (!cardNumber || !expDate || !cvc) {
+          alert("Complete card information is required");
+          return false;
+        }
+
+        if (!cardholderName) {
+          alert("Cardholder name is required");
+          return false;
+        }
+
+        if (!addressLine1 || !postalCode || !city) {
+          alert("Complete billing address is required");
+          return false;
+        }
+
+        if (!terms) {
+          alert("You must agree to the terms");
+          return false;
+        }
+
+        alert("Form submitted successfully!");
+        // Here you can add the actual form submission logic if needed
+        // e.g., document.getElementById('your-form-id').submit();
+      }
+
+      function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(String(email).toLowerCase());
+      }
+    </script>
+  </head>
+  <body class="hh ">
+    <div class="container">
+      <div class="left">
+        <br />
+        <br />
+
+        <div class="price">
+          <span> BPELT Subscription Lifetime</span>
+          <span><h1>US $100</h1></span>
+        </div>
+        <br />
+        <br />
+
+        <div class="subtotal">
+          <span>Subtotal</span>
+          <span>US $100</span>
+        </div>
+
+        <hr class="horizontal dark mt-0" />
+        <div class="tax">
+          <span>Tax</span>
+          <span>US $0.00</span>
+        </div>
+
+        <hr class="horizontal dark mt-0" />
+        <div class="total">
+          <span>Total due today</span>
+          <span>US $100</span>
+        </div>
+      </div>
+      
+      <div class="right">
+        <form>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="BPELT@gmail.com" />
+          </div>
+          <div class="form-group">
+            <label for="card-number">Card information</label>
+            <input
+              type="text"
+              id="card-number"
+              name="card-number"
+              placeholder="1234 1234 1234 1234"
+            
+            />
+          
+            <input
+              type="text"
+              id="exp-date"
+              name="exp-date"
+              placeholder="MM / YY"
+            />
+            
+            <input type="text" id="cvc" name="cvc" placeholder="CVC" />
+          </div>
+          <div class="form-group">
+            <label for="cardholder-name">Cardholder name</label>
+            <input type="text" id="cardholder-name" name="cardholder-name" />
+          </div>
+          <div class="form-group">
+            <label for="country">Billing address</label>
+            <select id="country" name="country">
+              <option value="afghanistan">🇦🇫 Afghanistan</option>
+              <option value="albania">🇦🇱 Albania</option>
+              <option value="algeria">🇩🇿 Algeria</option>
+              <option value="andorra">🇦🇩 Andorra</option>
+              <option value="angola">🇦🇴 Angola</option>
+              <option value="antigua-and-barbuda">
+                🇦🇬 Antigua and Barbuda
+              </option>
+              <option value="argentina">🇦🇷 Argentina</option>
+              <option value="armenia">🇦🇲 Armenia</option>
+              <option value="australia">🇦🇺 Australia</option>
+              <option value="austria">🇦🇹 Austria</option>
+              <option value="azerbaijan">🇦🇿 Azerbaijan</option>
+              <option value="bahamas">🇧🇸 Bahamas</option>
+              <option value="bahrain">🇧🇭 Bahrain</option>
+              <option value="bangladesh">🇧🇩 Bangladesh</option>
+              <option value="barbados">🇧🇧 Barbados</option>
+              <option value="belarus">🇧🇾 Belarus</option>
+              <option value="belgium">🇧🇪 Belgium</option>
+              <option value="belize">🇧🇿 Belize</option>
+              <option value="benin">🇧🇯 Benin</option>
+              <option value="bhutan">🇧🇹 Bhutan</option>
+              <option value="bolivia">🇧🇴 Bolivia</option>
+              <option value="bosnia-and-herzegovina">
+                🇧🇦 Bosnia and Herzegovina
+              </option>
+              <option value="botswana">🇧🇼 Botswana</option>
+              <option value="brazil">🇧🇷 Brazil</option>
+              <option value="brunei">🇧🇳 Brunei</option>
+              <option value="bulgaria">🇧🇬 Bulgaria</option>
+              <option value="burkina-faso">🇧🇫 Burkina Faso</option>
+              <option value="burundi">🇧🇮 Burundi</option>
+              <option value="cabo-verde">🇨🇻 Cabo Verde</option>
+              <option value="cambodia">🇰🇭 Cambodia</option>
+              <option value="cameroon">🇨🇲 Cameroon</option>
+              <option value="canada">🇨🇦 Canada</option>
+              <option value="central-african-republic">
+                🇨🇫 Central African Republic
+              </option>
+              <option value="chad">🇹🇩 Chad</option>
+              <option value="chile">🇨🇱 Chile</option>
+              <option value="china">🇨🇳 China</option>
+              <option value="colombia">🇨🇴 Colombia</option>
+              <option value="comoros">🇰🇲 Comoros</option>
+              <option value="congo-democratic-republic">
+                🇨🇩 Congo, Democratic Republic of the
+              </option>
+              <option value="congo-republic">🇨🇬 Congo, Republic of the</option>
+              <option value="costa-rica">🇨🇷 Costa Rica</option>
+              <option value="cote-divoire">🇨🇮 Côte d'Ivoire</option>
+              <option value="croatia">🇭🇷 Croatia</option>
+              <option value="cuba">🇨🇺 Cuba</option>
+              <option value="cyprus">🇨🇾 Cyprus</option>
+              <option value="czech-republic">🇨🇿 Czech Republic</option>
+              <option value="denmark">🇩🇰 Denmark</option>
+              <option value="djibouti">🇩🇯 Djibouti</option>
+              <option value="dominica">🇩🇲 Dominica</option>
+              <option value="dominican-republic">🇩🇴 Dominican Republic</option>
+              <option value="east-timor">🇹🇱 East Timor</option>
+              <option value="ecuador">🇪🇨 Ecuador</option>
+              <option value="egypt">🇪🇬 Egypt</option>
+              <option value="el-salvador">🇸🇻 El Salvador</option>
+              <option value="equatorial-guinea">🇬🇶 Equatorial Guinea</option>
+              <option value="eritrea">🇪🇷 Eritrea</option>
+              <option value="estonia">🇪🇪 Estonia</option>
+              <option value="eswatini">🇸🇿 Eswatini</option>
+              <option value="ethiopia">🇪🇹 Ethiopia</option>
+              <option value="fiji">🇫🇯 Fiji</option>
+              <option value="finland">🇫🇮 Finland</option>
+              <option value="france">🇫🇷 France</option>
+              <option value="gabon">🇬🇦 Gabon</option>
+              <option value="gambia">🇬🇲 Gambia</option>
+              <option value="georgia">🇬🇪 Georgia</option>
+              <option value="germany">🇩🇪 Germany</option>
+              <option value="ghana">🇬🇭 Ghana</option>
+              <option value="greece">🇬🇷 Greece</option>
+              <option value="grenada">🇬🇩 Grenada</option>
+              <option value="guatemala">🇬🇹 Guatemala</option>
+              <option value="guinea">🇬🇳 Guinea</option>
+              <option value="guinea-bissau">🇬🇼 Guinea-Bissau</option>
+              <option value="guyana">🇬🇾 Guyana</option>
+              <option value="haiti">🇭🇹 Haiti</option>
+              <option value="honduras">🇭🇳 Honduras</option>
+              <option value="hungary">🇭🇺 Hungary</option>
+              <option value="iceland">🇮🇸 Iceland</option>
+              <option value="india">🇮🇳 India</option>
+              <option value="indonesia">🇮🇩 Indonesia</option>
+              <option value="iran">🇮🇷 Iran</option>
+              <option value="iraq">🇮🇶 Iraq</option>
+              <option value="ireland">🇮🇪 Ireland</option>
+              <option value="israel">🇮🇱 Israel</option>
+              <option value="italy">🇮🇹 Italy</option>
+              <option value="jamaica">🇯🇲 Jamaica</option>
+              <option value="japan">🇯🇵 Japan</option>
+              <option value="jordan">🇯🇴 Jordan</option>
+              <option value="kazakhstan">🇰🇿 Kazakhstan</option>
+              <option value="kenya">🇰🇪 Kenya</option>
+              <option value="kiribati">🇰🇮 Kiribati</option>
+              <option value="korea-north">🇰🇵 Korea, North</option>
+              <option value="korea-south">🇰🇷 Korea, South</option>
+              <option value="kosovo">🇽🇰 Kosovo</option>
+              <option value="kuwait">🇰🇼 Kuwait</option>
+              <option value="kyrgyzstan">🇰🇬 Kyrgyzstan</option>
+              <option value="laos">🇱🇦 Laos</option>
+              <option value="latvia">🇱🇻 Latvia</option>
+              <option value="lebanon">🇱🇧 Lebanon</option>
+              <option value="lesotho">🇱🇸 Lesotho</option>
+              <option value="liberia">🇱🇷 Liberia</option>
+              <option value="libya">🇱🇾 Libya</option>
+              <option value="liechtenstein">🇱🇮 Liechtenstein</option>
+              <option value="lithuania">🇱🇹 Lithuania</option>
+              <option value="luxembourg">🇱🇺 Luxembourg</option>
+              <option value="madagascar">🇲🇬 Madagascar</option>
+              <option value="malawi">🇲🇼 Malawi</option>
+              <option value="malaysia">🇲🇾 Malaysia</option>
+              <option value="maldives">🇲🇻 Maldives</option>
+              <option value="mali">🇲🇱 Mali</option>
+              <option value="malta">🇲🇹 Malta</option>
+              <option value="marshall-islands">🇲🇭 Marshall Islands</option>
+              <option value="mauritania">🇲🇷 Mauritania</option>
+              <option value="mauritius">🇲🇺 Mauritius</option>
+              <option value="mexico">🇲🇽 Mexico</option>
+              <option value="micronesia">🇫🇲 Micronesia</option>
+              <option value="moldova">🇲🇩 Moldova</option>
+              <option value="monaco">🇲🇨 Monaco</option>
+              <option value="mongolia">🇲🇳 Mongolia</option>
+              <option value="montenegro">🇲🇪 Montenegro</option>
+              <option value="morocco">🇲🇦 Morocco</option>
+              <option value="mozambique">🇲🇿 Mozambique</option>
+              <option value="myanmar">🇲🇲 Myanmar</option>
+              <option value="namibia">🇳🇦 Namibia</option>
+              <option value="nauru">🇳🇷 Nauru</option>
+              <option value="nepal">🇳🇵 Nepal</option>
+              <option value="netherlands">🇳🇱 Netherlands</option>
+              <option value="new-zealand">🇳🇿 New Zealand</option>
+              <option value="nicaragua">🇳🇮 Nicaragua</option>
+              <option value="niger">🇳🇪 Niger</option>
+              <option value="nigeria">🇳🇬 Nigeria</option>
+              <option value="north-macedonia">🇲🇰 North Macedonia</option>
+              <option value="norway">🇳🇴 Norway</option>
+              <option value="oman">🇴🇲 Oman</option>
+              <option value="pakistan">🇵🇰 Pakistan</option>
+              <option value="palau">🇵🇼 Palau</option>
+              <option value="panama">🇵🇦 Panama</option>
+              <option value="papua-new-guinea">🇵🇬 Papua New Guinea</option>
+              <option value="paraguay">🇵🇾 Paraguay</option>
+              <option value="peru">🇵🇪 Peru</option>
+              <option value="philippines">🇵🇭 Philippines</option>
+              <option value="poland">🇵🇱 Poland</option>
+              <option value="portugal">🇵🇹 Portugal</option>
+              <option value="qatar">🇶🇦 Qatar</option>
+              <option value="romania">🇷🇴 Romania</option>
+              <option value="russia">🇷🇺 Russia</option>
+              <option value="rwanda">🇷🇼 Rwanda</option>
+              <option value="saint-kitts-and-nevis">
+                🇰🇳 Saint Kitts and Nevis
+              </option>
+              <option value="saint-lucia">🇱🇨 Saint Lucia</option>
+              <option value="saint-vincent-and-the-grenadines">
+                🇻🇨 Saint Vincent and the Grenadines
+              </option>
+              <option value="samoa">🇼🇸 Samoa</option>
+              <option value="san-marino">🇸🇲 San Marino</option>
+              <option value="sao-tome-and-principe">
+                🇸🇹 São Tomé and Príncipe
+              </option>
+              <option value="saudi-arabia">🇸🇦 Saudi Arabia</option>
+              <option value="senegal">🇸🇳 Senegal</option>
+              <option value="serbia">🇷🇸 Serbia</option>
+              <option value="seychelles">🇸🇨 Seychelles</option>
+              <option value="sierra-leone">🇸🇱 Sierra Leone</option>
+              <option value="singapore">🇸🇬 Singapore</option>
+              <option value="slovakia">🇸🇰 Slovakia</option>
+              <option value="slovenia">🇸🇮 Slovenia</option>
+              <option value="solomon-islands">🇸🇧 Solomon Islands</option>
+              <option value="somalia">🇸🇴 Somalia</option>
+              <option value="south-africa">🇿🇦 South Africa</option>
+              <option value="south-sudan">🇸🇸 South Sudan</option>
+              <option value="spain">🇪🇸 Spain</option>
+              <option value="sri-lanka">🇱🇰 Sri Lanka</option>
+              <option value="sudan">🇸🇩 Sudan</option>
+              <option value="suriname">🇸🇷 Suriname</option>
+              <option value="sweden">🇸🇪 Sweden</option>
+              <option value="switzerland">🇨🇭 Switzerland</option>
+              <option value="syria">🇸🇾 Syria</option>
+              <option value="taiwan">🇹🇼 Taiwan</option>
+              <option value="tajikistan">🇹🇯 Tajikistan</option>
+              <option value="tanzania">🇹🇿 Tanzania</option>
+              <option value="thailand">🇹🇭 Thailand</option>
+              <option value="togo">🇹🇬 Togo</option>
+              <option value="tonga">🇹🇴 Tonga</option>
+              <option value="trinidad-and-tobago">
+                🇹🇹 Trinidad and Tobago
+              </option>
+              <option value="tunisia" selected>🇹🇳 Tunisia</option>
+              <option value="turkey">🇹🇷 Turkey</option>
+              <option value="turkmenistan">🇹🇲 Turkmenistan</option>
+              <option value="tuvalu">🇹🇻 Tuvalu</option>
+              <option value="uganda">🇺🇬 Uganda</option>
+              <option value="ukraine">🇺🇦 Ukraine</option>
+              <option value="united-arab-emirates">
+                🇦🇪 United Arab Emirates
+              </option>
+              <option value="united-kingdom">🇬🇧 United Kingdom</option>
+              <option value="united-states">🇺🇸 United States</option>
+              <option value="uruguay">🇺🇾 Uruguay</option>
+              <option value="uzbekistan">🇺🇿 Uzbekistan</option>
+              <option value="vanuatu">🇻🇺 Vanuatu</option>
+              <option value="vatican-city">🇻🇦 Vatican City</option>
+              <option value="venezuela">🇻🇪 Venezuela</option>
+              <option value="vietnam">🇻🇳 Vietnam</option>
+              <option value="yemen">🇾🇪 Yemen</option>
+              <option value="zambia">🇿🇲 Zambia</option>
+              <option value="zimbabwe">🇿🇼 Zimbabwe</option>
+
+              <!-- Add more options as needed -->
+            </select>
+            <input
+              type="text"
+              id="address-line-1"
+              name="address-line-1"
+              placeholder="Address line 1"
+            />
+            <input
+              type="text"
+              id="address-line-2"
+              name="address-line-2"
+              placeholder="Address line 2"
+            />
+            <input
+              type="text"
+              id="postal-code"
+              name="postal-code"
+              placeholder="Postal code"
+            />
+            <input type="text" id="city" name="city" placeholder="City" />
+          </div>
+          <div class="form-group">
+            <input type="checkbox" id="save-info" name="save-info" />
+            <label for="save-info" class="checkbox-label"
+              >Securely save my information for 1-click checkout</label
+            >
+          </div>
+          <div class="form-group">
+            <input type="checkbox" id="terms" name="terms" />
+            <label for="terms" class="checkbox-label"
+              >You agree to BPELT Terms of Use and Privacy Policy.</label
+            >
+          </div>
+
+         
+          <a class="btn btn-success mt-3 w-100" href="/payement"target="_blank">buy</a>
+          
+        
+      </div>
+    </div>
+  </body>
+</html>

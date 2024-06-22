@@ -1,0 +1,225 @@
+<!--
+=========================================================
+* Soft UI Dashboard - v1.0.7
+=========================================================
+
+* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard
+* Copyright 2023 Creative Tim (https://www.creative-tim.com)
+* Licensed under MIT (https://www.creative-tim.com/license)
+* Coded by Creative Tim
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+-->
+<!DOCTYPE html>
+<html lang="en" id="ok">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="apple-touch-icon" sizes="76x76" href="../static/img/b.png" />
+    <link rel="icon" type="image/png" href="../static/img/b.png" />
+    <title>BPELT</title>
+    <!--     Fonts and icons     -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700"
+      rel="stylesheet"
+    />
+    <!-- Nucleo Icons -->
+    <link href="../static/css/nucleo-icons.css" rel="stylesheet" />
+    <link href="../static/css/nucleo-svg.css" rel="stylesheet" />
+    <!-- Font Awesome Icons -->
+    <script
+      src="https://kit.fontawesome.com/42d5adcbca.js"
+      crossorigin="anonymous"
+    ></script>
+    <link href="../static/css/nucleo-svg.css" rel="stylesheet" />
+    <!-- CSS Files -->
+    <link
+      id="pagestyle"
+      href="../static/css/soft-ui-dashboard.css?v=1.0.7"
+      rel="stylesheet"
+    />
+    <!-- Nepcha Analytics (nepcha.com) -->
+    <!-- Nepcha is a easy-to-use web analytics. No cookies and fully compliant with GDPR, CCPA and PECR. -->
+    <script
+      defer
+      data-site="YOUR_DOMAIN_HERE"
+      src="https://api.nepcha.com/js/nepcha-analytics.js"
+    ></script>
+  </head>
+
+  <body class="g-sidenav-show bg-gray-100">
+    <!-- JavaScript to handle the active state of the navigation links -->
+
+    <main
+      class="main-content position-relative max-height-vh-100 h-100 border-radius-lg"
+    >
+      <!-- Navbar -->
+      <nav
+        class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl"
+        id="navbarBlur"
+        navbar-scroll="true"
+      >
+        <div class="container-fluid py-1 px-3">
+          <nav aria-label="breadcrumb">
+            <ol
+              class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5"
+            >
+              <li class="breadcrumb-item text-sm">
+                <a class="opacity-5 text-dark" href="javascript:;">Pages</a>
+              </li>
+              <li
+                class="breadcrumb-item text-sm text-dark active"
+                aria-current="page"
+              >
+                BPELT
+              </li>
+            </ol>
+            <h6 class="font-weight-bolder mb-0">BPELT</h6>
+          </nav>
+          <div
+            class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4"
+            id="navbar"
+          >
+            <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+              <li class="nav-item d-flex align-items-center">
+                <a
+                  class="btn btn-outline-primary btn-sm mb-0 me-3"
+                  target="_blank"
+                  href="https://github.com/ApoorvaKrisna/NASA-promise-dataset-repository"
+                >
+                  Dataset used ?</a
+                >
+              </li>
+            </div>
+            <ul class="navbar-nav justify-content-end">
+              <li class="nav-item d-flex align-items-center">
+                <a
+                  target="_blank"
+                  href="https://github.com/Leylasmiai"
+                  class="nav-link text-body font-weight-bold px-0"
+                >
+                  <i class="fa fa-linkedin me-sm-1"></i>
+                  <span class="d-sm-inline d-none">LinkedIn</span>
+                  <i class="fa fa-sign-out-alt ms-1"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- End Navbar -->
+
+      <div class="container-fluid py-4 text-center">
+        <!--upload **************************-->
+        <h2>Page For Help</h2>
+        <p>
+          In this page, we delve into the development of a web interface for our
+          proposed BPELT (Bug Prediction with an Ensemble Learning Tool)
+          approach. This interface facilitates the process of predicting
+          software bugs by leveraging machine learning techniques to enhance
+          prediction accuracy. Using datasets in the ARFF (Attribute-Relation
+          File Format) format extracted from the PROMISE NASA repository, which
+          is widely recognized in the field of bug prediction, our web interface
+          allows users to upload datasets and view prediction results. It also
+          provides visualizations in the form of charts and tables to help users
+          comprehend the results and make informed decisions.
+        </p>
+
+        <h2>0.2 Upload page interface</h2>
+        This is the section one for uploading dataset, then split into two parts
+        "Training and Testing" the parts are specified according to the needs of
+        the user. This is another interface to show summary, the interface is
+        displayed after user clicks show summary button.
+        <h2>0.3 Apprentissage page interface</h2>
+        This is the section number two for train the classifier, the user
+        selects the classifier that needs. If the user needs to specify the
+        weights, he must check ’Specify weights manually’ in the following
+        figure and put the weights according to their choice and check that the
+        sum of weights equals 1
+        <h2>0.4 Test model page interface</h2>
+        This is the section number three for test the model with high accuracy,
+        the testing process is done instance by instance . If the user needs to
+        display all the characteristics of an instance of the test part, he must
+        write the number of the instance and click on the display instance
+        characteristics button.
+
+        <h2>0.5 Prediction page interface</h2>
+
+        This is the last section in my interface, it’s for prediction and
+        visualization, we display a confu- sion matrix and the classification
+        report and the Roc as a result
+
+        <br /><br /><br /><br />
+        This page presented the development and implementation of the web
+        interface for the Bug Prediction with an Ensemble Learning Tool (BPELT).
+        This interface is a critical component of the overall system, designed
+        to provide an accessible and user-friendly platform for users to
+        interact with the bug prediction model. The chapter detailed the global
+        use case diagram and specific use case studies, illustrating how users
+        can upload datasets, view prediction results, and make informed
+        decisions based on the output generated by the model.\\The interface was
+        developed using modern web technologies, ensuring that it is both robust
+        and scalable. Key functionalities, such as dataset upload, data
+        visualization, and result interpretation, were implemented to enhance
+        the user experience and facilitate the practical application of the
+        BPELT approach in real-world scenarios. The use case diagrams provided a
+        clear understanding of the user interactions and the workflow within the
+        system.\\ In conclusion, the development of the web interface
+        significantly contributes to the usability and practicality of the BPELT
+        model. By offering a streamlined and intuitive platform, the interface
+        enables developers to efficiently utilize the bug prediction tool,
+        ultimately aiding in the early detection and correction of software
+        bugs. This chapter underscores the importance of integrating predictive
+        models with user-friendly interfaces to bridge the gap between complex
+        machine learning algorithms and their application in everyday software
+        development practices. Future enhancements could focus on further
+        refining the interface, incorporating additional features, and improving
+        overall user engagement and satisfaction.
+
+        <footer class="footer pt-3">
+          <div class="container-fluid">
+            <div class="row align-items-center justify-content-lg-between">
+              <div class="col-lg-6 mb-lg-0 mb-4">
+                <div
+                  class="copyright text-center text-sm text-muted text-lg-start"
+                >
+                  ©
+                  <script>
+                    document.write(new Date().getFullYear());
+                  </script>
+                  , made with <i class="fa fa-heart"></i> by
+                  <a
+                    href="https://github.com/Leylasmiai"
+                    class="font-weight-bold"
+                    target="_blank"
+                    >Smiai Leila</a
+                  >
+                  .
+                </div>
+              </div>
+              <div class="col-lg-6"></div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </main>
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script
+      type="text/javascript"
+      src="{{url_for('static', filename='scripts.js')}}"
+    ></script>
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <!-- * *                               SB Forms JS                               * *-->
+    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+  </body>
+</html>
